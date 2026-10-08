@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Clair — The Private Dating Companion & Safety Net</title>
+  <meta name="description" content="Works alongside all dating apps — Hinge, Tinder, Bumble, Raya, and more. Clair gives you an added edge in modern dating with pre-date dossiers, witty conversation coaching, and quiet guardian safety." />
+  
+  <!-- Social Media & OpenGraph Meta -->
+  <meta property="og:title" content="Clair — The Private Dating Companion & Safety Net" />
+  <meta property="og:description" content="An added edge and quiet safety net for online dating. Works alongside all dating apps." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Search Engine Blocking / No-Follow for Private Beta -->
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Fallback Google Fonts for seamless CDN rendering -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Outfit:wght@300;400;500;600;700&family=Source+Code+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+</head>
+<body class="clair-dark">
+
+  <!-- SVG Symbol Registry -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" aria-hidden="true">
+    <symbol id="clair-C" viewBox="0 0 332 334">
+      <path d="M156.893 0.236C195.144 -1.126 221.614 3.048 255.779 22.029C288.738 40.343 320.051 78.438 330.672 115.208C330.959 116.203 330.421 117.241 329.444 117.583C322.036 120.181 312.324 122.802 304.969 124.918L267.683 135.761C266.698 136.047 265.656 135.542 265.269 134.592C263.088 129.245 261.176 124.809 258.169 119.540C245.044 96.707 223.384 80.030 197.954 73.186C144.879 58.889 87.745 88.790 73.945 143.034C67.072 169.685 71.068 197.974 85.055 221.678C99.593 245.256 118.200 256.387 143.106 265.359C144.040 265.696 144.597 266.662 144.402 267.636C140.457 287.330 134.419 312.332 129.318 331.809C129.037 332.883 127.932 333.521 126.863 333.221C103.579 326.688 83.755 317.227 64.500 302.002C29.543 274.616 6.819 234.531 1.273 190.472C-4.294 144.990 8.547 99.169 36.937 63.203C61.432 32.241 96.158 11.021 134.885 3.350C142.255 1.830 149.429 1.094 156.893 0.236Z" fill="currentColor"/>
+      <path d="M265.808 203.619C266.235 202.728 267.243 202.271 268.191 202.545C284.881 207.365 301.984 211.311 318.709 216.022C322.487 217.086 326.193 217.921 329.865 219.222C330.833 219.565 331.344 220.612 331.047 221.596C318.372 263.693 286.936 299.168 248.484 319.743C236.290 326.230 226.242 329.519 213.481 333.343C212.402 333.667 211.267 333.035 210.982 331.945C205.572 311.245 201.752 288.513 203.869 263.213C233.674 252.413 252.531 231.317 265.808 203.619Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    </symbol>
+    <symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+      <circle cx="12" cy="12" r="3"/>
+    </symbol>
+    <symbol id="icon-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+    </symbol>
+    <symbol id="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+    </symbol>
+  </svg>
+
+  <!-- 1. NAVIGATION HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-lockup" aria-label="Clair home">
+        <svg class="brand-mark-svg"><use href="#clair-C"/></svg>
+        <span class="brand-name">Clair</span>
+      </a>
+
+      <div class="brand-status-chip">
+        <span class="pulse-dot"></span>
+        <span>Works Alongside All Dating Apps · Private Cohort</span>
+      </div>
+
+      <nav class="nav-actions" aria-label="Main navigation">
+        <a href="#dossier-preview" class="nav-link">The Pre-Date Dossier</a>
+        <a href="#superpowers" class="nav-link">The Edge &amp; Safety</a>
+        <a href="#confidence-system" class="nav-link">Confidence Telemetry</a>
+        <a href="#registration-form" class="btn btn-sm btn-cyan">Request Access</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. HERO SECTION — DATING COMPANION & SAFETY -->
+    <section class="hero" id="hero">
+      <div class="container">
+        
+        <div class="eyebrow">
+          <span>Your Private Dating Companion &amp; Safety Net</span>
+        </div>
+
+        <h1 class="hero-title">
+          Dating is better when you’re prepared.<br />
+          <em>Know who you’re meeting before you meet up.</em>
+        </h1>
+
+        <p class="hero-lede">
+          Clair runs quietly alongside all dating apps. Drop in a profile or screenshot for an instant read on <strong>red flags, verified details, and clever openers</strong>—with built-in <strong>quiet guardian safety</strong> whenever you’re out.
+        </p>
+
+        <!-- Compatibility App Bar -->
+        <div class="compat-banner" aria-label="Works alongside all dating apps">
+          <span>Works seamlessly alongside all dating apps:</span>
+          <div class="compat-apps">
+            <span>Hinge</span> · <span>Bumble</span> · <span>Tinder</span> · <span>Raya</span> · <span>Feeld</span> · <span>iMessage</span>
+          </div>
+        </div>
+
+        <!-- Single Primary Lead Capture Card -->
+        <div class="lead-box" id="registration-form">
+          
+          <!-- Default Form View -->
+          <div class="lead-form-view" id="lead-form-view">
+            <div class="lead-header">
+              <span class="lead-label">Apply for Private Beta Access</span>
+              <span class="lead-cohort">142 / 200 Beta Spots Remaining</span>
+            </div>
+
+            <form class="lead-form" id="single-registration-form" novalidate>
+              
+              <!-- Field 1: Email Address -->
+              <div class="form-field">
+                <label for="lead-email" class="form-label">
+                  <span>Email Address</span>
+                  <span class="req-tag">Required</span>
+                </label>
+                <input
+                  type="email"
+                  class="form-input"
+                  id="lead-email"
+                  placeholder="you@email.com"
+                  autocomplete="email"
+                  required
+                  aria-label="Your personal email address"
+                />
+                <div class="error-message" id="lead-email-error" role="alert"></div>
+              </div>
+
+              <!-- Field 2: LinkedIn or Public Social Profile (Required) -->
+              <div class="form-field">
+                <label for="lead-social" class="form-label">
+                  <span>LinkedIn or Public Social Profile</span>
+                  <span class="req-tag">Required</span>
+                </label>
+                <input
+                  type="text"
+                  class="form-input"
+                  id="lead-social"
+                  placeholder="linkedin.com/in/yourprofile or @instagram"
+                  autocomplete="off"
+                  required
+                  aria-label="LinkedIn or public social profile link"
+                />
+                <div class="form-hint">
+                  Required for identity verification &amp; safety network screening. We never share your profile.
+                </div>
+                <div class="error-message" id="lead-social-error" role="alert"></div>
+              </div>
+
+              <!-- Field 3: Dating App Selector -->
+              <div class="role-selector-wrap">
+                <div class="role-pills-label">
+                  <span>Where do you date most?</span>
+                  <span style="font-family:var(--font-mono);font-size:11px;color:var(--champagne);">Works with all</span>
+                </div>
+                <div class="role-pills" role="radiogroup" aria-label="Select your primary dating app">
+                  <button type="button" class="role-pill selected" data-role="All Apps">All Dating Apps</button>
+                  <button type="button" class="role-pill" data-role="Hinge">Hinge</button>
+                  <button type="button" class="role-pill" data-role="Bumble">Bumble</button>
+                  <button type="button" class="role-pill" data-role="Tinder">Tinder</button>
+                  <button type="button" class="role-pill" data-role="Raya / Private">Raya / Private</button>
+                </div>
+              </div>
+
+              <!-- Submit CTA -->
+              <button type="submit" class="btn btn-cyan btn-lg btn-full" id="lead-submit-btn">
+                <span>Request Access</span>
+                <span aria-hidden="true">→</span>
+              </button>
+
+              <div class="lead-meta">
+                <svg><use href="#icon-lock"/></svg>
+                <span>100% confidential. Your matches will never know you use Clair.</span>
+              </div>
+            </form>
+          </div>
+
+          <!-- Success / Reservation Ticket View (Populated via JS) -->
+          <div class="lead-success" id="lead-success-view" aria-live="polite">
+            <div class="ticket-card">
+              <div class="ticket-header">
+                <span class="ticket-badge">Application Received</span>
+                <span class="ticket-id">#CLR-DATE-B04-89X2</span>
+              </div>
+              <div class="ticket-body">
+                <h3>Your application is in review.</h3>
+                <p>
+                  To protect our guardian community, every applicant is screened via their verified social or professional profile (<span class="ticket-user-social" style="color:var(--cyan-strong);font-family:var(--font-mono);font-size:13px;"></span>). An invitation link will be dispatched to <strong class="ticket-user-email">your email</strong> once approved.
+                </p>
+                <div class="ticket-referral">
+                  <code>https://clair.me/invite?ref=CLR928</code>
+                  <button type="button" class="ticket-copy-btn">Copy Priority Link</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. LIVE INTERACTIVE PRODUCT PREVIEW / PRE-DATE DOSSIER -->
+    <section class="preview-section" id="dossier-preview">
+      <div class="container">
+        
+        <div class="section-head">
+          <div class="section-kicker">Interactive Telemetry</div>
+          <h2 class="section-title">The pre-date dossier <em>before you sit down.</em></h2>
+          <p class="section-sub">
+            Drop in three screenshots from any dating app. Clair triangulates photo corroboration, conversation patterns, and background consistency into a discrete briefing.
+          </p>
+        </div>
+
+        <!-- Tactile Dossier Window Frame -->
+        <div class="dossier-frame">
+          <div class="dossier-bar">
+            <span class="dossier-tag">
+              <svg style="width:14px;height:14px;color:var(--cyan-strong);"><use href="#clair-C"/></svg>
+              <span>PRE-DATE DOSSIER &amp; VIBE CHECK</span>
+            </span>
+            <span class="dossier-meta">
+              <span class="pulse-dot" style="width:5px;height:5px;"></span>
+              <span>DATE WATCH ACTIVE · BAR HEMINGWAY</span>
+            </span>
+          </div>
+
+          <div class="dossier-content">
+            
+            <!-- Left: Match Profile & Corroboration -->
+            <div class="subject-col">
+              <div class="subject-header">
+                <div class="subject-avatar" aria-hidden="true">
+                  JH
+                  <span class="subject-badge-pill">HINGE</span>
+                </div>
+                <div>
+                  <h3 class="subject-name">Julian Hayes, 29</h3>
+                  <div class="subject-title">Architectural Designer · Met 3 days ago</div>
+                </div>
+              </div>
+
+              <!-- Confidence Signature Widget -->
+              <div class="signature-widget">
+                <div class="conf-c-container" title="Confidence Signature: 94% Corroborated Match">
+                  <svg class="conf-c-bg"><use href="#clair-C"/></svg>
+                  <div class="conf-c-fill-layer" style="height: 94%;">
+                    <svg class="conf-c-fill"><use href="#clair-C"/></svg>
+                  </div>
+                </div>
+                <div class="conf-text-wrap">
+                  <div class="conf-score-row">
+                    <span class="conf-score-num">94%</span>
+                    <span class="conf-score-label">Verified Match</span>
+                  </div>
+                  <div class="conf-desc">Identity verified. Photos match public record &amp; firm credentials.</div>
+                </div>
+              </div>
+
+              <!-- Triangulated Dating Signals -->
+              <div class="signals-list">
+                <div class="signal-item">
+                  <span class="signal-dot high" aria-hidden="true"></span>
+                  <div><strong>Verified Profile:</strong> Senior architect at Foster+Partners; mutual circle verified in Soho. Zero catfish flags.</div>
+                </div>
+                <div class="signal-item">
+                  <span class="signal-dot mid" aria-hidden="true"></span>
+                  <div><strong>Conversation Gold:</strong> Passionate about Japanese brutalism and natural wines. Bring up Tokyo record bars.</div>
+                </div>
+                <div class="signal-item">
+                  <span class="signal-dot low" aria-hidden="true"></span>
+                  <div><strong>Subtle Watchout:</strong> Bio says 6'1; past marathon timing photos suggest closer to 5'10. Low risk.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Conversational & In-Between Coach -->
+            <div class="coach-col">
+              
+              <div class="observational-card">
+                <div class="obs-label">
+                  <svg style="width:14px;height:14px;"><use href="#icon-eye"/></svg>
+                  <span>Clair In-Between Coach · Live Angle</span>
+                </div>
+                <p class="obs-quote" id="obs-quote-text">
+                  “Julian teased your music taste to see if you get defensive. Do not over-explain yourself—tease his coffee order back. Matches his banter, keeps the energy light, and positions you as high-status.”
+                </p>
+              </div>
+
+              <div class="replies-block">
+                <div class="replies-head">
+                  <span class="replies-label">He texted: “Running 10 mins late, grab us a booth?”</span>
+                  <span style="font-size:11px;font-family:var(--font-mono);color:var(--champagne);">Test 3 reply angles</span>
+                </div>
+
+                <div class="reply-options" role="tablist" aria-label="Suggested response angles">
+                  <button type="button" class="reply-option active" data-reply-mode="witty" role="tab" aria-selected="true">
+                    <span class="reply-tag">PLAYFUL &amp; HIGH-STATUS</span>
+                    <div class="reply-text">“Only if the first round of spicy martinis is on you 🍸”</div>
+                    <div class="reply-reasoning">Flirty banter that rewards his initiative while holding effortless frame.</div>
+                  </button>
+
+                  <button type="button" class="reply-option" data-reply-mode="direct" role="tab" aria-selected="false">
+                    <span class="reply-tag">DIRECT &amp; BOUNDARIES</span>
+                    <div class="reply-text">“No worries, but the clock starts now 😉 See you in 10.”</div>
+                    <div class="reply-reasoning">Playfully enforces respect for your time without escalating drama.</div>
+                  </button>
+
+                  <button type="button" class="reply-option" data-reply-mode="chill" role="tab" aria-selected="false">
+                    <span class="reply-tag">LOW-PRESSURE &amp; WARM</span>
+                    <div class="reply-text">“All good, take your time! Corner booth has our name on it.”</div>
+                    <div class="reply-reasoning">Relaxed reassurance that eases first-date anxiety before walking in.</div>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. THREE PILLARS (THE EDGE & GUARDIAN SAFETY) -->
+    <section class="pillars-section" id="superpowers">
+      <div class="container">
+        
+        <div class="section-head">
+          <div class="section-kicker">The Double Advantage</div>
+          <h2 class="section-title">An added edge. <em>A discreet safety net.</em></h2>
+          <p class="section-sub">
+            Traditional dating apps stop the moment you match. Clair works alongside all dating apps—vetting profiles, sharpening your banter, and quietly watching your back.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          
+          <!-- Pillar 1 -->
+          <article class="pillar-card">
+            <div class="pillar-icon-wrap">
+              <svg style="width:24px;height:24px;"><use href="#icon-eye"/></svg>
+            </div>
+            <span class="pillar-num">01 · THE EDGE</span>
+            <h3 class="pillar-title">The Pre-Date Dossier</h3>
+            <p class="pillar-desc">
+              Drop in screenshots of their prompts and photos. Clair cuts through curated bios to extract their humor style, conversational blind spots, and genuine mutual interests so you skip the boring interview questions.
+            </p>
+          </article>
+
+          <!-- Pillar 2 -->
+          <article class="pillar-card">
+            <div class="pillar-icon-wrap">
+              <svg style="width:24px;height:24px;color:var(--cyan-strong);"><use href="#clair-C"/></svg>
+            </div>
+            <span class="pillar-num">02 · THE WINGMAN</span>
+            <h3 class="pillar-title">The In-Between Coach</h3>
+            <p class="pillar-desc">
+              Stuck on what to text back? Stepping to the restroom mid-date because the conversation stalled? Clair gives you three calibrated replies—witty, bold, or chill—tailored to their actual personality.
+            </p>
+          </article>
+
+          <!-- Pillar 3 -->
+          <article class="pillar-card">
+            <div class="pillar-icon-wrap">
+              <svg style="width:24px;height:24px;"><use href="#icon-shield"/></svg>
+            </div>
+            <span class="pillar-num">03 · GUARDIAN SAFETY</span>
+            <h3 class="pillar-title">Quiet Watch Safety</h3>
+            <p class="pillar-desc">
+              Heading out for a first drink? Set a Quiet Watch with a single tap. Your trusted roommate or best friend receives discreet status pings only if a check-in is missed, complete with the venue address.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. CONFIDENCE SIGNATURE EXPLORER & ANIMATED SCROLL BAR ASSET -->
+    <section class="signature-section" id="confidence-system">
+      <div class="container">
+        
+        <div class="signature-box">
+          <div class="asset-badge">
+            <span class="asset-badge-dot"></span>
+            <span>LIVE TELEMETRY ASSET · AUTO-SCROLLS ON FIRST VIEW</span>
+          </div>
+
+          <div class="sig-layout">
+            
+            <div class="sig-visual">
+              <div class="sig-mark-big" aria-hidden="true">
+                <svg class="sig-svg-base"><use href="#clair-C"/></svg>
+                <div class="sig-svg-clipper" id="sig-clipper" style="height: 30%;">
+                  <svg class="sig-svg-fill" id="sig-fill"><use href="#clair-C"/></svg>
+                </div>
+              </div>
+              <div class="sig-readout" id="sig-readout-num">30%</div>
+            </div>
+
+            <div class="sig-controls">
+              <div>
+                <div class="section-kicker">Catfish &amp; Corroboration Engine</div>
+                <h4>The Confidence Signature</h4>
+              </div>
+              <p>
+                How do you know if a match is genuine? Clair inspects image metadata, timeline consistency, and verifiable background claims across all dating apps. Watch the telemetry scrollbar evaluate a match in real time:
+              </p>
+
+              <!-- Animated Scrollbar / Slider Asset -->
+              <div class="sig-slider-wrap">
+                <div class="sig-slider-label">
+                  <span>Match Corroboration Telemetry</span>
+                  <span id="sig-readout-label" style="color:var(--peach);">Low Corroboration · Unverified Profile</span>
+                </div>
+                <div class="scroll-track-container">
+                  <input
+                    type="range"
+                    min="5"
+                    max="100"
+                    value="30"
+                    class="sig-slider"
+                    id="sig-slider"
+                    aria-label="Confidence percentage scrollbar"
+                  />
+                </div>
+              </div>
+
+              <div class="sig-presets">
+                <button type="button" class="sig-preset-btn" data-val="25">Red Flag (25% · Peach)</button>
+                <button type="button" class="sig-preset-btn" data-val="65">Partial (65% · Cyan)</button>
+                <button type="button" class="sig-preset-btn" data-val="94">Verified (94% · Matcha)</button>
+                <button type="button" class="sig-replay-btn" id="sig-replay-btn">
+                  <span>Replay Telemetry</span>
+                  <span aria-hidden="true">↺</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. THE DATING PRIVACY & SAFETY MANIFESTO -->
+    <section class="privacy-section">
+      <div class="container">
+        
+        <div class="section-head">
+          <div class="section-kicker">Zero-Creep Guarantee</div>
+          <h2 class="section-title">Strict privacy for <em>your personal life.</em></h2>
+          <p class="section-sub">
+            Your dating conversations, profile screenshots, and dates belong strictly to you.
+          </p>
+        </div>
+
+        <div class="privacy-grid">
+          <div class="privacy-item">
+            <div class="privacy-item-icon">
+              <svg style="width:18px;height:18px;"><use href="#icon-lock"/></svg>
+            </div>
+            <div>
+              <h5>Screenshots Automatically Purged</h5>
+              <p>Screenshots dropped into Clair are analyzed client-side and deleted once your date begins. We never keep a library of your matches.</p>
+            </div>
+          </div>
+
+          <div class="privacy-item">
+            <div class="privacy-item-icon">
+              <svg style="width:18px;height:18px;"><use href="#icon-shield"/></svg>
+            </div>
+            <div>
+              <h5>No Public Database or Match Leaks</h5>
+              <p>Your dates are never cross-indexed or rated publicly. Clair is your private, discrete personal wingman—not a gossip forum.</p>
+            </div>
+          </div>
+
+          <div class="privacy-item">
+            <div class="privacy-item-icon">
+              <svg style="width:18px;height:18px;"><use href="#icon-pulse"/></svg>
+            </div>
+            <div>
+              <h5>Quiet Watch Encrypted Channels</h5>
+              <p>Location beacons sent to your trusted guardian are secured with AES-256 and expire immediately after you confirm you're home safe.</p>
+            </div>
+          </div>
+
+          <div class="privacy-item">
+            <div class="privacy-item-icon">
+              <svg style="width:18px;height:18px;"><use href="#icon-eye"/></svg>
+            </div>
+            <div>
+              <h5>Zero AI Training On Your Messages</h5>
+              <p>Your private flirtatious banter and personal disclosures are never used to train foundational AI models or sold to third parties.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. FINAL ACCESS GATE (SINGLE CTA LINKING TO REGISTRATION FORM) -->
+    <section class="cta-closing" id="closing-gate">
+      <div class="container">
+        
+        <div class="closing-card">
+          <h2 class="closing-title">
+            Never walk into a first date <em>unprepared.</em>
+          </h2>
+          <p class="closing-sub">
+            Join the private dating companion network. Works alongside all dating apps. Invitations are released in small, verified waves for Batch 04.
+          </p>
+
+          <div class="closing-actions">
+            <a href="#registration-form" class="btn btn-cyan btn-lg">
+              <span>Request Access</span>
+              <span aria-hidden="true">↑</span>
+            </a>
+            <div class="closing-trust-note">
+              <svg style="width:14px;height:14px;color:var(--champagne);"><use href="#icon-lock"/></svg>
+              <span>Single vetted application · Verified social or LinkedIn screening</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. SITE FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <a href="#" class="brand-lockup" aria-label="Clair home">
+        <svg class="brand-mark-svg" style="width:20px;height:20px;"><use href="#clair-C"/></svg>
+        <span class="brand-name" style="font-size:18px;">Clair</span>
+      </a>
+
+      <div class="footer-copy">
+        © 2026 Clair Intelligence Inc. All rights reserved.<br />
+        Works alongside all dating apps. Designed for personal dating safety &amp; authentic connection.
+      </div>
+
+      <div class="footer-links">
+        <a href="#registration-form">Request Access</a>
+        <a href="#dossier-preview">Pre-Date Dossier</a>
+        <a href="#superpowers">The Edge &amp; Safety</a>
+        <a href="#confidence-system">Confidence Telemetry</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

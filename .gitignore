@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# OS metadata
+.DS_Store
+**/.DS_Store
+Thumbs.db
+.qoder/
+
+# Build & Deploy
+dist/
+build/
+.vercel/
+**/.vercel/
+*.log
+
+# Heavy video & media render outputs
+marketing/
+splash-remotion/
+design_handoff_clair_ios/
+
+# Local env
+.env
+.env.local
+
